@@ -9,6 +9,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -133,7 +135,8 @@ fun LikeCounter(
         horizontalArrangement = Arrangement.End
     ) {
         Icon(
-            painter = painter,
+            imageVector = Icons.Default.Favorite,
+            tint = Color.Red,
             contentDescription = "Heart Icon"
         )
         Divider(modifier = Modifier.width(6.dp))
