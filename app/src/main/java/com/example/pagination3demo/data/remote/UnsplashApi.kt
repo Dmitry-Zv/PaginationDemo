@@ -1,6 +1,7 @@
 package com.example.pagination3demo.data.remote
 
 import com.example.pagination3demo.BuildConfig
+import com.example.pagination3demo.domain.model.SearchResult
 import com.example.pagination3demo.domain.model.UnsplashImage
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
@@ -21,8 +22,8 @@ interface UnsplashApi {
     @Headers("Authorization: Client-ID ${BuildConfig.API_KEY}")
     @GET("/search/photos")
     suspend fun searchImages(
-        @Query("page") page: Int,
+        @Query("query") query: String,
         @Query("per_page") perPage: Int,
 
-        ): List<UnsplashImage>
+        ): SearchResult
 }

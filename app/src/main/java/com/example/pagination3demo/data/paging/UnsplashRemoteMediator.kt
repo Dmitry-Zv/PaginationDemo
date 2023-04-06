@@ -6,16 +6,13 @@ import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import com.example.pagination3demo.data.local.UnsplashDatabase
-import com.example.pagination3demo.data.local.dao.UnsplashImageDao
-import com.example.pagination3demo.data.local.dao.UnsplashRemoteKeysDao
 import com.example.pagination3demo.data.remote.UnsplashApi
 import com.example.pagination3demo.domain.model.UnsplashImage
 import com.example.pagination3demo.domain.model.UnsplashRemoteKeys
 import com.example.pagination3demo.util.Constants.ITEMS_PER_PAGE
-import javax.inject.Inject
 
 @OptIn(ExperimentalPagingApi::class)
-class UnsplashRemoteMediator @Inject constructor(
+class UnsplashRemoteMediator(
     private val unsplashApi: UnsplashApi,
     private val unsplashDatabase: UnsplashDatabase
 ) : RemoteMediator<Int, UnsplashImage>() {
